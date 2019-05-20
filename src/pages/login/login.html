@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title text-center>
+        Fidelidade
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content padding>
+  <div text-center>
+    <h4>LOGIN</h4>
+  </div>
+    <ion-item no-padding>
+    <ion-label floating>Email</ion-label>
+    <ion-input type="text" value="" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+
+  <ion-item no-padding>
+    <ion-label floating>Senha</ion-label>
+    <ion-input type="password" [(ngModel)]="user.senha"></ion-input>
+  </ion-item>
+
+  <div text-center padding>
+    <button ion-button block (click)="login()">Login</button>
+  </div>
+
+  <div text-center padding>
+    <p><a href="#">Esqueceu a senha?</a></p>
+    <p>Não possui uma conta? <a href="#">Cadastre-se</a>!</p>
+    <p>Não consegue acessar sua conta? <a href="#">Fale conosco</a>!</p>
+  </div>
+</ion-content>
