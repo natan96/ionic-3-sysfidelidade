@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import swal from 'sweetalert';
 import { HomePage } from '../home/home';
 
@@ -20,7 +20,8 @@ export class LoginPage {
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    public menu: MenuController) {
   }
 
   ionViewDidLoad() {
@@ -32,9 +33,17 @@ export class LoginPage {
       swal({ title: "Atenção", text: "Campos obrigatorios não preenchidos", icon: "warning" });
     }else{
 
-      localStorage.setItem("usuario", JSON.stringify(this.user));
+      localStorage.setItem("userFidel", JSON.stringify(this.user));
       this.navCtrl.setRoot(HomePage, null, { animate: true, animation: 'transition', duration: 1000, direction: 'forward' })
         
     }
+  }
+
+  ionViewDidEnter(){
+    this.menu.enable(false);
+  }
+
+  ionViewWillLeave(){
+    this.menu.enable(true);
   }
 }

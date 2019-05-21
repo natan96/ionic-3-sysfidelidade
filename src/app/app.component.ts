@@ -28,7 +28,7 @@ export class MyApp {
       { title: 'List', component: ListPage }
     ];
 
-    let user = localStorage.getItem('usuario');
+    let user = localStorage.getItem("userFidel");
     if(user){
       this.initializeApp();
     }
@@ -50,5 +50,10 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  logout(){
+    localStorage.removeItem("userFidel");
+    this.nav.setRoot(LoginPage, null);
   }
 }
