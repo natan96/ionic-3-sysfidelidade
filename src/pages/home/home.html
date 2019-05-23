@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title></ion-title>
     <!-- <div text-right no-padding>
       <button ion-button icon-only>
         <ion-icon name="log-out" (click)="logout()"></ion-icon>
@@ -12,11 +12,14 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
-    <button ion-button icon-end block color="light" *ngFor="let item of lista" padding>
-      <div text-left no-padding>{{item.loja}}</div>
-      <div text-right no-padding><ion-icon name="star"></ion-icon></div>
+<ion-content>
+  <ion-list no-lines>
+    <div *ngFor="let item of lista" padding>
+      <button ion-item icon-end block color="light" no-padding>
+        <div class="item-note" padding-left item-start>{{item.loja}}</div>
+        <div class="item-note" item-end>{{item.pontos}}</div>
+        <ion-icon name="star" item-end></ion-icon>
       </button> 
+    </div>
   </ion-list>
-  </ion-content>
+</ion-content>

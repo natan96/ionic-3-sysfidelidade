@@ -16,24 +16,24 @@ export class HomePage {
   getFidelidade(): Array<{ loja: string, pontos: number }>{
     return [
       {
-        loja: "Loja 1",
-        pontos: 1
+        loja: "Buritis",
+        pontos: 0
       },
       {
-        loja: "Loja 2",
-        pontos: 1
+        loja: "Alberto Cintra",
+        pontos: 0
       },
       {
-        loja: "Loja 3",
-        pontos: 1
+        loja: "Del Rey",
+        pontos: 0
       },
       {
-        loja: "Loja 4",
-        pontos: 1
+        loja: "Minas Shopping",
+        pontos: 0
       },
       {
-        loja: "Loja 5",
-        pontos: 1
+        loja: "Pampulha",
+        pontos: 0
       },
     ]
   }
