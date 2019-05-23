@@ -13,10 +13,10 @@
 </ion-header>
 
 <ion-content padding>
-
-  <button ion-button icon-end block color="light">
-    <div text-left no-padding>Loja</div>
-    <div text-right no-padding><ion-icon name="star"></ion-icon></div>
-  </button>
-  
-</ion-content>
+  <ion-list>
+    <button ion-button icon-end block color="light" *ngFor="let item of lista" padding>
+      <div text-left no-padding>{{item.loja}}</div>
+      <div text-right no-padding><ion-icon name="star"></ion-icon></div>
+      </button> 
+  </ion-list>
+  </ion-content>
