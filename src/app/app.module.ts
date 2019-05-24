@@ -10,6 +10,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { LoginPageModule } from '../pages/login/login.module';
+import { CriarContaPage } from '../pages/criar-conta/criar-conta';
+import { CriarContaPageModule } from '../pages/criar-conta/criar-conta.module';
 
 @NgModule({
   declarations: [
@@ -20,14 +22,16 @@ import { LoginPageModule } from '../pages/login/login.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    LoginPageModule
+    LoginPageModule,
+    CriarContaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     ListPage,
-    LoginPage
+    LoginPage,
+    CriarContaPage
   ],
   providers: [
     StatusBar,

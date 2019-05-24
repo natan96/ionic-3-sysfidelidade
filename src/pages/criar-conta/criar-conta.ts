@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the CriarContaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,11 +8,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CriarContaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public menu: MenuController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CriarContaPage');
   }
 
+  ionViewDidEnter(){
+    this.menu.enable(false);
+  }
+
+  ionViewWillLeave(){
+    this.menu.enable(true);
+  }
 }

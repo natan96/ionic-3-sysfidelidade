@@ -7,9 +7,11 @@ import { LoginPage } from '../login/login'
   templateUrl: 'home.html'
 })
 export class HomePage {
+  user: any;
   lista: Array<{ loja: string, pontos: number }>
 
   constructor(public navCtrl: NavController) {
+    this.verificaLogin();
     this.lista = this.getFidelidade();
   }
 
@@ -36,6 +38,16 @@ export class HomePage {
         pontos: 0
       },
     ]
+  }
+
+  verificaLogin(){
+    let login = JSON.parse(localStorage.getItem('userFidel'));
+    if(login){
+      this.user = login;
+    }
+    else{
+      this.navCtrl.setRoot(LoginPage, null);
+    }
   }
 
 }

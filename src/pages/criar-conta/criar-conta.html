@@ -8,27 +8,60 @@
 
 <ion-content padding>
     <!-- <form (ngSubmit)="createAccount()"> -->
-      <div text-center>CADASTRE-SE PARA TER ACESSO AO SISTEMA</div>
+      <div text-center padding>CADASTRE-SE PARA TER ACESSO AO SISTEMA</div>
       <form>
-        <ion-item>
-          <ion-label>Nome</ion-label>
-          <ion-input type="text" name="nome" placeholder="Seu primeiro nome"></ion-input>
-          <ion-input type="text" name="sobrenome" placeholder="Seu sobre nome"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>CPF</ion-label>
-          <ion-input name="cpf" placeholder="Seu CPF"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Email</ion-label>
-          <ion-input name="email" placeholder="Seu Email"></ion-input>
-          <ion-input name="confemail" placeholder="Confirme seu Email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Senha</ion-label>
-          <ion-input name="senha" placeholder="Sua senha"></ion-input>
-          <ion-input name="confsenha" placeholder="Confirme sua senha"></ion-input>
-        </ion-item>
-        <button ion-button type="submit" block>Cadastrar</button>
+        <ion-grid>
+          <ion-row padding-bottom>
+            <ion-col col-sm-6>
+                <ion-item>
+                  <ion-label floating>Nome</ion-label>
+                  <ion-input type="text" name="nome"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col col-sm-6>
+              <ion-item>
+                <ion-label floating>Sobrenome</ion-label>
+                <ion-input type="text" name="sobrenome"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row padding-bottom>
+            <ion-col>
+              <ion-item>
+                <ion-label floating>CPF</ion-label>
+                <ion-input name="cpf"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label floating>Email</ion-label>
+                <ion-input name="email"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row padding-bottom>
+            <ion-item>
+              <ion-label floating>Confirmar Email</ion-label>
+              <ion-input name="confemail"></ion-input>
+            </ion-item>
+          </ion-row>
+          <ion-row>
+            <ion-item>
+              <ion-label floating>Senha</ion-label>
+              <ion-input name="senha"></ion-input>              
+            </ion-item>
+          </ion-row>
+          <ion-row padding-bottom>
+            <ion-item>
+              <ion-label floating>Confirmar senha</ion-label>
+              <ion-input name="confsenha"></ion-input>
+            </ion-item>            
+          </ion-row>
+        </ion-grid>
+        <div padding>
+          <button ion-button type="submit" block padding>Cadastrar</button>
+        </div>
     </form>
 </ion-content>

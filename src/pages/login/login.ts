@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import swal from 'sweetalert';
 import { HomePage } from '../home/home';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { CriarContaPage } from '../criar-conta/criar-conta'
 
 @IonicPage()
 @Component({
@@ -16,12 +10,13 @@ import { HomePage } from '../home/home';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  user = { email: '', senha: ''}
+  user = { email: "", senha: "", nivel: "", nome: ""}
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public menu: MenuController) {
+      this.verificaLogin();
   }
 
   ionViewDidLoad() {
@@ -29,12 +24,13 @@ export class LoginPage {
   }
 
   login(){
-    if(this.user.email == '' || this.user.senha == ''){
+    if(this.user.email == "" || this.user.senha == ""){
       swal({ title: "Atenção", text: "Campos obrigatorios não preenchidos", icon: "warning" });
     }else{
-
+      this.user.nome = "MASTER";
+      this.user.nivel = "C";
       localStorage.setItem("userFidel", JSON.stringify(this.user));
-      this.navCtrl.setRoot(HomePage, null, { animate: true, animation: 'transition', duration: 1000, direction: 'forward' })
+      this.navCtrl.setRoot(HomePage, null, { animate: true, animation: 'transition', duration: 1000, direction: 'forward' });
         
     }
   }
@@ -45,5 +41,16 @@ export class LoginPage {
 
   ionViewWillLeave(){
     this.menu.enable(true);
+  }
+
+  itemTapped(event){
+    this.navCtrl.push(CriarContaPage, null, { animate: true, animation: 'transition', duration: 1000, direction: 'forward' });
+  }
+
+  verificaLogin(){
+    let login = JSON.parse(localStorage.getItem('userFidel'));
+    if(login){
+      this.navCtrl.setRoot(HomePage, null);
+    }
   }
 }
