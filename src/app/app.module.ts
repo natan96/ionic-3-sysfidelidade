@@ -12,6 +12,10 @@ import { LoginPage } from '../pages/login/login';
 import { LoginPageModule } from '../pages/login/login.module';
 import { CriarContaPage } from '../pages/criar-conta/criar-conta';
 import { CriarContaPageModule } from '../pages/criar-conta/criar-conta.module';
+import { FranquiasPage } from '../pages/franquias/franquias';
+import { FranquiasPageModule } from '../pages/franquias/franquias.module';
+import { ExtratoPageModule } from '../pages/extrato/extrato.module';
+import { ExtratoPage } from '../pages/extrato/extrato';
 
 @NgModule({
   declarations: [
@@ -22,16 +26,20 @@ import { CriarContaPageModule } from '../pages/criar-conta/criar-conta.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    FranquiasPageModule,
     LoginPageModule,
-    CriarContaPageModule
+    CriarContaPageModule,
+    ExtratoPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
+    FranquiasPage,
     ListPage,
     LoginPage,
-    CriarContaPage
+    CriarContaPage,
+    ExtratoPage
   ],
   providers: [
     StatusBar,

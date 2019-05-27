@@ -16,7 +16,7 @@ export class LoginPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public menu: MenuController) {
-      this.verificaLogin();
+      
   }
 
   ionViewDidLoad() {

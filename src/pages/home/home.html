@@ -13,7 +13,7 @@
 <ion-content>
   <ion-list no-lines>
     <div *ngFor="let item of lista" padding>
-      <button ion-item block color="light" no-padding>
+      <button ion-item block color="light" (click)="itemTapped($event, item)" no-padding>
         <div class="item-note" padding-left item-start>{{item.loja}}</div>
         <div class="item-note" item-end>{{item.pontos}}</div>
         <ion-icon name="star" item-end></ion-icon>

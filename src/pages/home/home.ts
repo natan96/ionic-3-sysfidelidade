@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login'
+import { ExtratoPage } from '../extrato/extrato';
 
 @Component({
   selector: 'page-home',
@@ -50,4 +51,9 @@ export class HomePage {
     }
   }
 
+  itemTapped(event, item){
+    this.navCtrl.push(ExtratoPage, {
+      item: item
+    });
+  }
 }
