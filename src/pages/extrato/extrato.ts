@@ -14,8 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'extrato.html',
 })
 export class ExtratoPage {
-
+  public loja:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.loja = navParams.get('item');
   }
 
   ionViewDidLoad() {

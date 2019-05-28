@@ -37,7 +37,7 @@ export class HomePage {
       {
         loja: "Pampulha",
         pontos: 0
-      },
+      }
     ]
   }
 
