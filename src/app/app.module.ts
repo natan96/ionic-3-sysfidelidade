@@ -16,6 +16,8 @@ import { FranquiasPage } from '../pages/franquias/franquias';
 import { FranquiasPageModule } from '../pages/franquias/franquias.module';
 import { ExtratoPageModule } from '../pages/extrato/extrato.module';
 import { ExtratoPage } from '../pages/extrato/extrato';
+import { ApiProvider } from '../providers/api/api';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { ExtratoPage } from '../pages/extrato/extrato';
     FranquiasPageModule,
     LoginPageModule,
     CriarContaPageModule,
-    ExtratoPageModule
+    ExtratoPageModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,7 +47,8 @@ import { ExtratoPage } from '../pages/extrato/extrato';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ApiProvider
   ]
 })
 export class AppModule {}

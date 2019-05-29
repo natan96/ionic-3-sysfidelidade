@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
 import swal from 'sweetalert';
 import { HomePage } from '../home/home';
 import { CriarContaPage } from '../criar-conta/criar-conta'
+import { ApiProvider } from '../../providers/api/api';
 
 @IonicPage()
 @Component({
@@ -10,11 +11,12 @@ import { CriarContaPage } from '../criar-conta/criar-conta'
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  user = { email: "", senha: "", nivel: "", nome: ""}
+  user = { email: '', senha: '', tipo: '', nome: ''}
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
+    public api: ApiProvider,
     public menu: MenuController) {
       
   }
@@ -24,14 +26,29 @@ export class LoginPage {
   }
 
   login(){
-    if(this.user.email == "" || this.user.senha == ""){
+    // if(this.user.email == "" || this.user.senha == ""){
+    //   swal({ title: "Atenção", text: "Campos obrigatorios não preenchidos", icon: "warning" });
+    // }else{
+    //   this.user.nome = "MASTER";
+    //   this.user.nivel = "C";
+    //   localStorage.setItem("userFidel", JSON.stringify(this.user));
+    //   this.navCtrl.setRoot(HomePage, null, { animate: true, animation: 'transition', duration: 1000, direction: 'forward' });
+        
+    // }
+    if(this.user.email == '' || this.user.senha == ''){
       swal({ title: "Atenção", text: "Campos obrigatorios não preenchidos", icon: "warning" });
     }else{
-      this.user.nome = "MASTER";
-      this.user.nivel = "C";
-      localStorage.setItem("userFidel", JSON.stringify(this.user));
-      this.navCtrl.setRoot(HomePage, null, { animate: true, animation: 'transition', duration: 1000, direction: 'forward' });
-        
+      this.api.login(this.user).then((res:any) =>{
+        if(res){
+          localStorage.setItem("userFidel", JSON.stringify(res[0]));
+          this.navCtrl.setRoot(HomePage, null, { animate: true, animation: 'transition', duration: 1000, direction: 'forward' })
+        }
+        else{
+          swal({ title: "Atenção", text: "Verifique seu login e senha", icon: "error" });
+        }
+      }).catch(() =>{
+        swal({ title: "Atenção", text: "Verifique seu login e senha", icon: "error" });
+      })
     }
   }
 
@@ -47,10 +64,4 @@ export class LoginPage {
     this.navCtrl.push(CriarContaPage, null, { animate: true, animation: 'transition', duration: 1000, direction: 'forward' });
   }
 
-  verificaLogin(){
-    let login = JSON.parse(localStorage.getItem('userFidel'));
-    if(login){
-      this.navCtrl.setRoot(HomePage, null);
-    }
-  }
 }

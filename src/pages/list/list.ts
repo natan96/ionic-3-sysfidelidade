@@ -36,27 +36,27 @@ export class ListPage {
     return [
       {
         loja: 'Buritis',
-        note: 'Acesse o extrato',
+        note: 'Extrato >',
         icon: 'ribbon'
       },
       {
         loja: 'Alberto Cintra',
-        note: 'Acesse o extrato',
+        note: 'Extrato >',
         icon: 'ribbon'
       },
       {
         loja: 'Del Rey',
-        note: 'Acesse o extrato',
+        note: 'Extrato >',
         icon: 'ribbon'
       },
       {
         loja: 'Minas Shopping',
-        note: 'Acesse o extrato',
+        note: 'Extrato >',
         icon: 'ribbon'
       },
       {
         loja: 'Pampulha',
-        note: 'Acesse o extrato',
+        note: 'Extrato >',
         icon: 'ribbon'
       }
     ]
