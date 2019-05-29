@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the ExtratoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-extrato',
@@ -15,12 +8,30 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ExtratoPage {
   public loja:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public extratos: Array<any>;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams) {
+
     this.loja = navParams.get('item');
+    this.extratos = this.getExtratos();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExtratoPage');
   }
 
+  getExtratos(): Array<any>{
+    return [
+      {
+        id: 1,
+        data: "02/05/2019 13:00",
+        ganho: 2,
+        usado: 0,
+        tipo: "G",
+        saldo: 2
+      }
+    ];
+  }
 }
