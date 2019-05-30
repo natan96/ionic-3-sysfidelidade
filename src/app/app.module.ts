@@ -18,6 +18,7 @@ import { ExtratoPageModule } from '../pages/extrato/extrato.module';
 import { ExtratoPage } from '../pages/extrato/extrato';
 import { ApiProvider } from '../providers/api/api';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginPageModule,
     CriarContaPageModule,
     ExtratoPageModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxDatatableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
