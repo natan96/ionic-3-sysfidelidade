@@ -15,7 +15,7 @@
 <ion-content padding>
 
   <div padding>
-    <button ion-item block color="light" (click)="itemTapped($event, item)" no-padding>
+    <button ion-item block color="light" no-padding>
       <div class="item-note" padding-left item-start>{{loja.loja}}</div>
       <div class="item-note" item-end>{{loja.pontos}}</div>
       <ion-icon name="star" item-end></ion-icon>
@@ -27,7 +27,6 @@
       <div class="col">Usado</div>
       <div class="col">Tipo</div>
       <div class="col">Saldo</div>
-      <div class="col">Ação</div>
   </div>
   <div class="row" *ngFor="let ext of extratos">
       <div class="col">{{ext.data}}</div>
@@ -35,8 +34,8 @@
       <div class="col">{{ext.usado}}</div>
       <div class="col">{{ext.saldo}}</div>
       <div class="col">{{ext.tipo}}</div>
-      <div class="col"><button ion-button icon-only><ion-icon name="color-wand"></ion-icon></button></div>
   </div>
 </ion-content>
 
 <!-- ngx-datatable http://masteringionic.com/blog/2018-02-13-implementing-angular-data-tables-in-an-ionic-application/ -->
+<!-- ion-select https://www.tutorialspoint.com/ionic/ionic_select.htm -->
