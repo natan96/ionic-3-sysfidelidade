@@ -22,9 +22,8 @@ export class ApiProvider {
     })
   }
 
-  getExtratos(){
-    return JSON.stringify({ 
-        dados : [
+  getExtratos(): Array<any>{
+    return [
         {
           id: 1,
           data: "02/05/2019 13:00",
@@ -33,7 +32,6 @@ export class ApiProvider {
           tipo: "G",
           saldo: 2
         }
-      ] 
-    });
+      ]
   }
 }

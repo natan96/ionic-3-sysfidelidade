@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { FranquiasPage } from '../pages/franquias/franquias';
 import { ApiProvider } from '../providers/api/api';
+import { GerenciarPontosPage } from '../pages/gerenciar-pontos/gerenciar-pontos';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,19 +26,19 @@ export class MyApp {
     public api: ApiProvider,
     public splashScreen: SplashScreen) {
 
-    this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'Franquias', component: FranquiasPage },
-      { title: 'Lojas', component: ListPage }
-    ];
-
-    let user = localStorage.getItem("userFidel");
-    if(user){
-      this.initializeApp();
+    let user = JSON.parse(localStorage.getItem('userFidel'));
+    if(user!=null){
+      if(user.tipo == 'C'){
+        this.CarregaCliente();
+      }
+      else{
+        this.CarregaLogista();
+      }
     }
     else{
       this.rootPage = "LoginPage";
     }
+    this.initializeApp();
   }
 
   initializeApp() {
@@ -54,5 +55,20 @@ export class MyApp {
   logout(){
     localStorage.removeItem("userFidel");
     this.nav.setRoot(LoginPage, null);
+  }
+
+  CarregaCliente(){
+    this.pages = [
+      { title: 'Home', component: HomePage },
+      { title: 'Franquias', component: FranquiasPage },
+      { title: 'Lojas', component: ListPage }
+    ];
+  }
+
+  CarregaLogista(){
+    this.pages = [
+      { title: 'Home', component: HomePage},
+      { title: 'Gerenciar Pontos', component: GerenciarPontosPage}
+    ];
   }
 }

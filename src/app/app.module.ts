@@ -18,7 +18,8 @@ import { ExtratoPageModule } from '../pages/extrato/extrato.module';
 import { ExtratoPage } from '../pages/extrato/extrato';
 import { ApiProvider } from '../providers/api/api';
 import { HttpClientModule } from '@angular/common/http';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { GerenciarPontosPage } from '../pages/gerenciar-pontos/gerenciar-pontos';
+import { GerenciarPontosPageModule } from '../pages/gerenciar-pontos/gerenciar-pontos.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     CriarContaPageModule,
     ExtratoPageModule,
     HttpClientModule,
-    NgxDatatableModule
+    GerenciarPontosPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,7 +45,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     ListPage,
     LoginPage,
     CriarContaPage,
-    ExtratoPage
+    ExtratoPage,
+    GerenciarPontosPage
   ],
   providers: [
     StatusBar,
