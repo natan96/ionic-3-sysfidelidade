@@ -4,6 +4,7 @@ import swal from 'sweetalert';
 import { HomePage } from '../home/home';
 import { CriarContaPage } from '../criar-conta/criar-conta'
 import { ApiProvider } from '../../providers/api/api';
+import { MyApp } from '../../app/app.component';
 
 @IonicPage()
 @Component({
@@ -41,7 +42,7 @@ export class LoginPage {
       this.api.login(this.user).then((res:any) =>{
         if(res){
           localStorage.setItem("userFidel", JSON.stringify(res[0]));
-          this.navCtrl.setRoot(HomePage, null, { animate: true, animation: 'transition', duration: 1000, direction: 'forward' })
+          this.navCtrl.setRoot(MyApp, null, { animate: true, animation: 'transition', duration: 1000, direction: 'forward' })
         }
         else{
           swal({ title: "Atenção", text: "Verifique seu login e senha", icon: "error" });

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, UrlSerializer } from 'ionic-angular';
 import { LoginPage } from '../login/login'
 import { ExtratoPage } from '../extrato/extrato';
+import { MyApp } from '../../app/app.component';
 
 @Component({
   selector: 'page-home',
@@ -13,7 +14,9 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
     this.verificaLogin();
-    this.lista = this.getFidelidade();
+    if(this.user != null && this.user.tipo == 'C'){
+      this.lista = this.getFidelidade();
+    }
   }
 
   getFidelidade(): Array<{ loja: string, pontos: number }>{
