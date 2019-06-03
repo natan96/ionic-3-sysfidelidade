@@ -14,6 +14,22 @@
 
 <ion-content padding>
 
+  <ion-grid>
+    <ion-row>
+      <ion-col col-sm-5>
+        <ion-datetime displayFormat="DD/MM/YYYY" placeholder="__/__/____"></ion-datetime>
+      </ion-col>
+      <ion-col col-sm-5>
+        <ion-datetime displayFormat="DD/MM/YYYY" placeholder="__/__/____"></ion-datetime>
+      </ion-col>
+      <ion-col col-sm-2>
+        <button ion-button icon-only>
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
   <div padding>
     <button ion-item block color="light" no-padding>
       <div class="item-note" padding-left item-start>{{loja.loja}}</div>
@@ -32,8 +48,8 @@
       <div class="col">{{ext.data}}</div>
       <div class="col">{{ext.ganho}}</div>
       <div class="col">{{ext.usado}}</div>
-      <div class="col">{{ext.saldo}}</div>
       <div class="col">{{ext.tipo}}</div>
+      <div class="col">{{ext.saldo}}</div>
   </div>
 </ion-content>
 
