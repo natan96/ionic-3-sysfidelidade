@@ -26,7 +26,7 @@ export class ApiProvider {
     return [
         {
           id: 1,
-          data: "02/05/2019 13:00",
+          data: "02/05/19 13:00",
           ganho: 2,
           usado: 0,
           tipo: "G",

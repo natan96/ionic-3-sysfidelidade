@@ -30,7 +30,31 @@
     </ion-row>
   </ion-grid>
 
+  
   <div padding>
+    <button ion-item block color="light" no-padding>
+      <div class="item-note" padding-left item-start>{{loja.loja}}</div>
+      <div class="item-note" item-end>{{loja.pontos}}</div>
+      <ion-icon name="star" item-end></ion-icon>
+    </button> 
+  </div>
+  <ion-grid>
+    <ion-row class="cabecalho" text-center>
+      <ion-col>Data</ion-col>
+      <ion-col>Ganho</ion-col>
+      <ion-col>Usado</ion-col>
+      <ion-col>Tipo</ion-col>
+      <ion-col>Saldo</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let ext of extratos">
+      <ion-col class="colunas">{{ext.data}}</ion-col>
+      <ion-col class="colunas" text-center>{{ext.ganho}}</ion-col>
+      <ion-col class="colunas" text-center>{{ext.usado}}</ion-col>
+      <ion-col class="colunas" text-center>{{ext.tipo}}</ion-col>
+      <ion-col class="colunas" text-center>{{ext.saldo}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  <!-- <div padding>
     <button ion-item block color="light" no-padding>
       <div class="item-note" padding-left item-start>{{loja.loja}}</div>
       <div class="item-note" item-end>{{loja.pontos}}</div>
@@ -50,7 +74,7 @@
       <div class="col">{{ext.usado}}</div>
       <div class="col">{{ext.tipo}}</div>
       <div class="col">{{ext.saldo}}</div>
-  </div>
+  </div> -->
 </ion-content>
 
 <!-- ngx-datatable http://masteringionic.com/blog/2018-02-13-implementing-angular-data-tables-in-an-ionic-application/ -->

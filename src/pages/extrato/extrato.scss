@@ -1,19 +1,34 @@
 page-extrato {
-    .header .col {
-        background-color:lightgrey;
+
+    .cabecalho{
+        background-color: lightslategray;
+        border-radius: 10px;
+        border: 10rem;
+        color: white;
     }
-    
-    .col {
+
+    .colunas{
+        background-color: lightsteelblue;
         border: solid 1px grey;
-        border-bottom-style: none;
-        border-right-style: none;
+        border-color: white;
+        border-radius: 5px;
+        flex-direction: row;
     }
+    // .header .col {
+    //     background-color:lightgrey;
+    // }
     
-    .col:last-child {
-        border-right: solid 1px grey;
-    }
+    // .col {
+    //     border: solid 1px grey;
+    //     border-bottom-style: none;
+    //     border-right-style: none;
+    // }
     
-    .row:last-child .col {
-        border-bottom: solid 1px grey;
-    }
+    // .col:last-child {
+    //     border-right: solid 1px grey;
+    // }
+    
+    // .row:last-child .col {
+    //     border-bottom: solid 1px grey;
+    // }
 }
