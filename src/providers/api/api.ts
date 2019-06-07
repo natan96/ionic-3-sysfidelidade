@@ -34,4 +34,42 @@ export class ApiProvider {
         }
       ]
   }
+
+  getFranquiasGerPontos(): Array<any> {
+    return [{
+      id: 41,
+      franquia: 'SushiJapa'
+    }]
+  }
+
+  getLojasGerPontos(): Array<{Franquia: number, id: number; loja: string}> {
+    return [
+      {
+        Franquia: 41,
+        id: 1,
+        loja: "Buritis"
+      },
+      {
+        Franquia: 41,
+        id: 2,
+        loja: "Alberto Cintra"
+      },
+      {
+        Franquia: 41,
+        id: 3,
+        loja: "Del Rey"
+      },
+      {
+        Franquia: 41,
+        id: 4,
+        loja: "Minas Shopping"
+      },
+      {
+        Franquia: 41,
+        id: 5,
+        loja: "Pampulha"
+      }
+    ]
+  }
+  
 }
