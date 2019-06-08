@@ -15,11 +15,15 @@ import { ApiProvider } from '../../providers/api/api';
   templateUrl: 'gerenciar-pontos.html',
 })
 export class GerenciarPontosPage {
-  public franquias: Array<{id: number, franquia: string}>;
-  public lojas: Array<{Franquia: number, id: number, loja: string}>;
+  public franquia: any;
+  public franquias: any[];
+  public lojas: any[];
+  public loja: any;
+  public selectedLojas: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
     this.lojas = this.getLojas();
+    this.franquias = this.getFranquia();
   }
 
   ionViewDidLoad() {
@@ -32,5 +36,13 @@ export class GerenciarPontosPage {
 
   getLojas(): Array<{Franquia: number, id: number, loja: string}> {
     return this.api.getLojasGerPontos();
+  }
+
+  setLojasValues(Franquia) {
+      this.selectedLojas = this.lojas.filter(item => item.Franquia == Franquia.id);
+  }
+
+  setFidelidadeList(Loja){
+    console.log(Loja.loja);
   }
 }

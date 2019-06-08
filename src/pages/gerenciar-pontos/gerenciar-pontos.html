@@ -13,10 +13,17 @@
 <ion-content padding>
   <h3>Adicionar ou Remover Pontos</h3>
   <ion-item>
+    <ion-label>Franquias</ion-label>
+    <!-- <ion-select (ionChange)="teste($event);"> -->
+      <ion-select (ionChange)="setLojasValues(franquia)" [(ngModel)]="franquia">
+      <ion-option [value]="franquia" *ngFor="let franquia of franquias">{{franquia.franquia}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
     <ion-label>Lojas</ion-label>
       <!-- <ion-select (ionChange)="teste($event);"> -->
-        <ion-select>
-        <ion-option *ngFor="let item of lojas" value="{{item.id}}">{{item.loja}}</ion-option>
+        <ion-select (ionChange)="setFidelidadeList(loja)" [(ngModel)]="loja">
+        <ion-option [value]="loja" *ngFor="let loja of selectedLojas">{{loja.loja}}</ion-option>
       </ion-select>
     </ion-item>
 </ion-content>
