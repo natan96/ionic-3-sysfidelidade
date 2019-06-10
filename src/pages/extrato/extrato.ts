@@ -24,14 +24,14 @@ export class ExtratoPage {
     public api : ApiProvider) {
 
     this.loja = navParams.get('item');
-    this.carregarExtratos();
+    this.carregarExtratos(this.loja.id);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExtratoPage');
   }
 
-  carregarExtratos(){
-    this.extratos = this.api.getExtratos();
+  carregarExtratos(id: number){
+    this.extratos = this.api.getExtratos(id);
   }
 }
