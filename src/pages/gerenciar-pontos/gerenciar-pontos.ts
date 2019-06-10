@@ -20,10 +20,12 @@ export class GerenciarPontosPage {
   public lojas: any[];
   public loja: any;
   public selectedLojas: any[];
+  public fidelidades: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
     this.lojas = this.getLojas();
     this.franquias = this.getFranquia();
+    this.fidelidades = [];
   }
 
   ionViewDidLoad() {
@@ -43,6 +45,6 @@ export class GerenciarPontosPage {
   }
 
   setFidelidadeList(Loja){
-    console.log(Loja.loja);
+    this.fidelidades = this.api.getFidelidadeCliente(Loja.id);
   }
 }

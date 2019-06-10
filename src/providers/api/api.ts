@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ApiProvider {
-
+  public fidelidades: any[]
   constructor(public http: HttpClient) {}
 
   login(usuario){
@@ -70,6 +70,52 @@ export class ApiProvider {
         loja: "Pampulha"
       }
     ]
+  }
+
+  getFidelidadeCliente(loja: number): Array<any> {
+   this.fidelidades = [
+      {
+        id: 1,
+        LojaID: 1,
+        nome: "Cliente1",
+        email: "cliente@gmail.com",
+        cpf: "111.111.111-11",
+        pontos: 0
+      },
+      {
+        id: 1,
+        LojaID: 2,
+        nome: "Cliente1",
+        email: "cliente@gmail.com",
+        cpf: "111.111.111-11",
+        pontos: 0
+      },
+      {
+        id: 1,
+        LojaID: 3,
+        nome: "Cliente1",
+        email: "cliente@gmail.com",
+        cpf: "111.111.111-11",
+        pontos: 0
+      },
+      {
+        id: 1,
+        LojaID: 4,
+        nome: "Cliente1",
+        email: "cliente@gmail.com",
+        cpf: "111.111.111-11",
+        pontos: 0
+      },
+      {
+        id: 1,
+        LojaID: 5,
+        nome: "Cliente1",
+        email: "cliente@gmail.com",
+        cpf: "111.111.111-11",
+        pontos: 0
+      }
+    ]
+    return this.fidelidades.filter(item => item.LojaID == loja);
   }
   
 }

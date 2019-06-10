@@ -1,3 +1,25 @@
 page-gerenciar-pontos {
+    .cabecalho{
+        background-color: lightslategray;
+        border-radius: 10px;
+        border: 10rem;
+        color: white;
+    }
 
+    .colunas{
+        background-color: lightsteelblue;
+        border: solid 1px grey;
+        border-color: white;
+        border-radius: 5px;
+        flex-direction: row;
+    }
+
+    .forecast_container{
+        overflow-x: scroll!important;
+        overflow-y: hidden;
+        word-wrap: break-word;
+        height:20vw;
+        font-size:0.8em;
+        font-weight:300;
+}
 }
