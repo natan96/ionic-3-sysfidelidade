@@ -14,7 +14,7 @@
   <h3>Adicionar ou Remover Pontos</h3>
   <ion-item>
     <ion-label>Franquias</ion-label>
-    <!-- <ion-select (ionChange)="teste($event);"> -->
+    <!-- <ion-select (ionChange)="teste($event);"> Ajustes na tela de Gerenciar Pontos -->
       <ion-select (ionChange)="setLojasValues(franquia)" [(ngModel)]="franquia">
       <ion-option [value]="franquia" *ngFor="let franquia of franquias">{{franquia.franquia}}</ion-option>
     </ion-select>
@@ -27,14 +27,14 @@
     </ion-select>
   </ion-item>
   <ion-grid>
-    <ion-row class="cabecalho" text-center>
+    <ion-row nowrap class="cabecalho" text-center>
       <ion-col>Nome</ion-col>
       <ion-col>Email</ion-col>
       <ion-col>CPF</ion-col>
       <ion-col>Pontos</ion-col>
       <ion-col>Ação</ion-col>
     </ion-row>
-    <ion-row *ngFor="let fidel of fidelidades" class="forecast_container">
+    <ion-row nowrap *ngFor="let fidel of fidelidades" class="forecast_container">
       <ion-col class="colunas">{{fidel.nome}}</ion-col>
       <ion-col class="colunas" text-center>{{fidel.email}}</ion-col>
       <ion-col class="colunas" text-center>{{fidel.cpf}}</ion-col>
