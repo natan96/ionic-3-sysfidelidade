@@ -22,7 +22,7 @@
   <ion-item>
     <ion-label>Lojas</ion-label>
       <!-- <ion-select (ionChange)="teste($event);"> -->
-      <ion-select (ionChange)="setFidelidadeList(loja)" [(ngModel)]="loja">
+      <ion-select (ionChange)="setFidelidadeList2(loja)" [(ngModel)]="loja">
       <ion-option [value]="loja" *ngFor="let loja of selectedLojas">{{loja.loja}}</ion-option>
     </ion-select>
   </ion-item>
