@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Md5} from "md5-typescript";
+import { stringify } from '@angular/core/src/util';
 
 @Injectable()
 export class ApiProvider {
@@ -14,8 +15,9 @@ export class ApiProvider {
       //this.http.get("https://5ce460e0e7bf4100144c6d1a.mockapi.io/fidelidade/Usuario?search=" + usuario.email ).toPromise()
       this.http.get("http://localhost:53557/api/Fidelidade/LogIn?Email=" + usuario.email ).toPromise()
       .then((res:any)=>{
-        if(usuario.email == res[0].email && usuario.senha == res[0].senha){
-          console.log(Md5.init(res[0].senha));
+        if(usuario.email == res[0].email && Md5.init(usuario.senha) == res[0].senha ){
+          //console.log(Md5.init(res[0].senha));
+          //console.log(Md5.init(usuario.senha));
           resolve(res)
         }
         else{
@@ -164,6 +166,17 @@ export class ApiProvider {
         pontos: 1
       }
     ] 
+  }
+
+  getEstabelecimentoSaldo(cpf: string){
+    return new Promise((resolve, reject) =>{
+      this.http.get('http://localhost:53557/api/Fidelidade/EstabelecimentoSaldo?cli_cpf='+cpf).toPromise()
+      .then((res:any)=>{
+        resolve(res);
+      }).catch(()=>{
+        reject();
+      })
+    })
   }
 
   getExtratos(id: number): Array<any>{

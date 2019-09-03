@@ -72,7 +72,7 @@ export class GerenciarPontosPage {
   }
 
   setFidelidadeList2(loja){
-    this.api.getFidelidadeCliente2(this.user, loja).then((res:any) =>{
+    this.api.getFidelidadeCliente2(this.user, loja.id).then((res:any) =>{
       if(res){
         this.fidelidades = res;
       }

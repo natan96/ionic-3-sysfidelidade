@@ -15,12 +15,23 @@ export class HomePage {
   constructor(public navCtrl: NavController, public api: ApiProvider) {
     this.verificaLogin();
     if(this.user != null && this.user.tipo == 'C'){
-      this.lista = this.getFidelidade();
+      this.getEstabelecimentoSaldo();
     }
   }
 
-  getFidelidade(): Array<any>{
-    return this.api.getFidelidadeExtrato();
+  // getFidelidade(): Array<any>{
+  //   return this.api.getFidelidadeExtrato();
+  // }
+
+  getEstabelecimentoSaldo(){
+    debugger
+    this.api.getEstabelecimentoSaldo(this.user.cpf).then((res:any) =>{
+      if(res){
+        this.lista = res;
+      }
+    }).catch(()=>{
+      swal({ title: "Atenção", text: "Erro ao carregar Lojas, contate o desenvolvedor", icon: "error" });
+    })
   }
 
   verificaLogin(){
