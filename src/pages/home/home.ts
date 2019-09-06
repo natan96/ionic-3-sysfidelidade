@@ -24,7 +24,6 @@ export class HomePage {
   // }
 
   getEstabelecimentoSaldo(){
-    debugger
     this.api.getEstabelecimentoSaldo(this.user.cpf).then((res:any) =>{
       if(res){
         this.lista = res;
