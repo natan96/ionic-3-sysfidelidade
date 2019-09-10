@@ -76,6 +76,9 @@ export class GerenciarPontosPage {
       if(res){
         this.fidelidades = res;
       }
+      else{
+        this.fidelidades = [];
+      }
     }).catch(()=>{
       swal({ title: "Atenção", text: "Erro ao carregar Lojas, contate o desenvolvedor", icon: "error" });
     })
