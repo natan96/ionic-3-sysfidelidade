@@ -12,7 +12,7 @@
 
 <ion-content padding>
   <h3>Adicionar ou Remover Pontos</h3>
-  <ion-item>
+  <ion-item *ngIf="franquias">
     <ion-label>Franquias</ion-label>
     <!-- <ion-select (ionChange)="teste($event);"> Ajustes na tela de Gerenciar Pontos -->
       <ion-select (ionChange)="setLojasValues(franquia)" [(ngModel)]="franquia">

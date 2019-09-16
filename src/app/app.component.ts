@@ -60,8 +60,8 @@ export class MyApp {
   CarregaCliente(){
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'Franquias', component: FranquiasPage },
-      { title: 'Lojas', component: ListPage }
+      // { title: 'Franquias', component: FranquiasPage },
+      // { title: 'Lojas', component: ListPage }
     ];
   }
 

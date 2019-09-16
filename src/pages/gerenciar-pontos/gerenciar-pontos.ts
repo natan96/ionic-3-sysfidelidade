@@ -30,6 +30,7 @@ export class GerenciarPontosPage {
     this.getLojas2();
     //this.franquias = this.getFranquia2();
     this.getFranquia();
+    
     this.fidelidades = [];
   }
 
@@ -64,7 +65,7 @@ export class GerenciarPontosPage {
   }
 
   setLojasValues(Franquia) {
-      this.selectedLojas = this.lojas.filter(item => item.franquia == Franquia.id);
+    this.selectedLojas = this.lojas.filter(item => item.franquia == Franquia.id);
   }
 
   setFidelidadeList(Loja){
