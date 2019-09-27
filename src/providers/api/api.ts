@@ -72,7 +72,7 @@ export class ApiProvider {
 
   getLojasGerPontos2(usuario){
     return new Promise((resolve, reject) =>{
-      this.http.get('http://localhost:53557/api/Fidelidade/LojaPorFranquia?lojista_id='+usuario.id).toPromise()
+      this.http.get('http://localhost:53557/api/Fidelidade/LojaPorLojista?lojista_id='+usuario.id).toPromise()
       .then((res:any)=>{
         resolve(res);
       }).catch(()=>{

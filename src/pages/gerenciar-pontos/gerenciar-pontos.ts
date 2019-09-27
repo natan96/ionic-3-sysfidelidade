@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
 import { CordovaFiniteObservable } from '@ionic-native/core';
+import { debounce } from 'ionic-angular/umd/util/util';
 
 /**
  * Generated class for the GerenciarPontosPage page.
@@ -44,6 +45,10 @@ export class GerenciarPontosPage {
         this.franquias = res;
         //return res;
       }
+      else{
+        this.franquias = null;
+        this.setLojasValues(null);
+      }
     }).catch(() =>{
       swal({ title: "Atenção", text: "Erro ao carregar Franquias, contate o desenvolvedor", icon: "error" });
     });
@@ -65,7 +70,10 @@ export class GerenciarPontosPage {
   }
 
   setLojasValues(Franquia) {
-    this.selectedLojas = this.lojas.filter(item => item.franquia == Franquia.id);
+    if(Franquia === null)
+      this.selectedLojas = this.lojas;
+    else
+      this.selectedLojas = this.lojas.filter(item => item.franquia == Franquia.id);
   }
 
   setFidelidadeList(Loja){
