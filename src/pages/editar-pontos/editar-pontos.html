@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Adicionar ou Remover Pontos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<h3 *ngIf="cliente">{{cliente.nome}}</h3>
+<p>Pontos: </p>
+<ion-label>Adicionar</ion-label>
+<ion-checkbox [(ngModel)]="add" (ionChange)="updateAdd()"></ion-checkbox>
+<ion-label>Remover</ion-label>
+<ion-checkbox [(ngModel)]="rem" (ionChange)="updateRem()"></ion-checkbox>
+
+<ion-content padding>
+
+</ion-content>
