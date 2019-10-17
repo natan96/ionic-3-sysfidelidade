@@ -12,7 +12,7 @@
 
 <ion-content padding>
   <h3>Adicionar ou Remover Pontos</h3>
-  <ion-item *ngIf="user.franqueado == 1">
+  <ion-item>
     <ion-label>Franquias</ion-label>
     <!-- <ion-select (ionChange)="teste($event);"> Ajustes na tela de Gerenciar Pontos -->
       <ion-select (ionChange)="setLojasValues(franquia)" [(ngModel)]="franquia">
@@ -22,24 +22,28 @@
   <ion-item>
     <ion-label>Lojas</ion-label>
       <!-- <ion-select (ionChange)="teste($event);"> -->
-      <ion-select (ionChange)="setFidelidadeList2(loja)" [(ngModel)]="loja">
+      <ion-select (ionChange)="setFidelidadeList(loja)" [(ngModel)]="loja">
       <ion-option [value]="loja" *ngFor="let loja of selectedLojas">{{loja.loja}}</ion-option>
     </ion-select>
   </ion-item>
-  <ion-grid>
-    <ion-row nowrap class="cabecalho" >
-      <ion-col>Nome</ion-col>
-      <ion-col>Email</ion-col>
-      <ion-col>CPF</ion-col>
-      <ion-col>Pontos</ion-col>
-      <ion-col>Ação</ion-col>
-    </ion-row>
-    <ion-row nowrap *ngFor="let fidel of fidelidades" class="forecast_container" text-center>
-      <ion-col class="colunas">{{fidel.nome}}</ion-col>
-      <ion-col class="colunas" text-center>{{fidel.email}}</ion-col>
-      <ion-col class="colunas" text-center>{{fidel.cpf}}</ion-col>
-      <ion-col class="colunas" text-center>{{fidel.pontos}}</ion-col>
-      <ion-col class="colunas" text-center>+/-</ion-col>
-    </ion-row>
-  </ion-grid>
+  <div id="table-wrapper">
+    <div id="table-scroll">
+      <ion-grid>
+        <ion-row nowrap class="cabecalho" text-center>
+          <ion-col class="colunas_cabecalho">Nome</ion-col>
+          <ion-col class="colunas_cabecalho">Email</ion-col>
+          <ion-col class="colunas_cabecalho">CPF</ion-col>
+          <ion-col class="colunas_cabecalho">Pontos</ion-col>
+          <ion-col class="colunas_cabecalho">Ação</ion-col>
+        </ion-row>
+        <ion-row nowrap *ngFor="let fidel of fidelidades" class="forecast_container" text-center>
+          <ion-col class="colunas">{{fidel.nome}}</ion-col>
+          <ion-col class="colunas" text-center>{{fidel.email}}</ion-col>
+          <ion-col class="colunas" text-center>{{fidel.cpf}}</ion-col>
+          <ion-col class="colunas" text-center>{{fidel.pontos}}</ion-col>
+          <ion-col class="colunas" text-center>+/-</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
 </ion-content>

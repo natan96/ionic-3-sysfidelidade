@@ -1,12 +1,18 @@
 page-gerenciar-pontos {
     .cabecalho{
+        min-width: 500px;
         background-color: lightslategray;
         border-radius: 10px;
         border: 10rem;
         color: white;
     }
 
+    .colunas_cabecalho{
+        min-width: 100px;
+        flex-direction: row;
+    }
     .colunas{
+        min-width: 100px;
         background-color: lightsteelblue;
         border: solid 1px grey;
         border-color: white;
@@ -15,11 +21,20 @@ page-gerenciar-pontos {
     }
 
     .forecast_container{
-        overflow-x: scroll!important;
-        overflow-y: hidden;
+        //overflow-x: scroll!important;
+        //overflow-y: hidden;
+        min-width: 100px;
         word-wrap: break-word;
-        height:20vw;
+        //height:20vw;
         font-size:0.8em;
         font-weight:300;
+    }
+
+    #table-wrapper{
+        position: relative;
+    }
+
+    #table-scroll{
+        overflow: auto;
     }
 }
