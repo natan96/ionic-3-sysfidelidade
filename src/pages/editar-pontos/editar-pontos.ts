@@ -14,9 +14,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'editar-pontos.html',
 })
 export class EditarPontosPage {
+  fidelidade: any;
   add :boolean;
   rem :boolean;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.fidelidade = navParams.get('fidelidade');
     this.add = true;
     this.rem = false;
   }
@@ -33,4 +35,5 @@ export class EditarPontosPage {
     this.add = !this.rem;
   }
 
+  
 }

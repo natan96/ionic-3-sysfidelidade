@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApiProvider } from '../../providers/api/api';
 import { CordovaFiniteObservable } from '@ionic-native/core';
 import { debounce } from 'ionic-angular/umd/util/util';
+import {EditarPontosPage} from '../editar-pontos/editar-pontos';
 
 /**
  * Generated class for the GerenciarPontosPage page.
@@ -39,6 +40,10 @@ export class GerenciarPontosPage {
     console.log('ionViewDidLoad GerenciarPontosPage');
   }
 
+  getFranquia2(): Array<any>{
+    return this.api.getFranquias();
+  }
+
   getFranquia(){
     this.api.getFranquiasGerPontos(this.user).then((res:any) =>{
       if(res){
@@ -73,7 +78,7 @@ export class GerenciarPontosPage {
     if(Franquia === null)
       this.selectedLojas = this.lojas;
     else
-      this.selectedLojas = this.lojas.filter(item => item.franquia == Franquia.id);
+      this.selectedLojas = this.lojas.filter(item => item.Franquia == Franquia.id);
   }
 
   setFidelidadeList(Loja){
@@ -91,5 +96,9 @@ export class GerenciarPontosPage {
     }).catch(()=>{
       swal({ title: "Atenção", text: "Erro ao carregar Lojas, contate o desenvolvedor", icon: "error" });
     })
+  }
+
+  editarPontos(fidelidade){
+    this.navCtrl.push(EditarPontosPage, {fidelidade}, { animate: true, animation: 'transition', duration: 1000, direction: 'forward' });
   }
 }

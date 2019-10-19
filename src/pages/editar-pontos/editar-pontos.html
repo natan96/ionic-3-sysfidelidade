@@ -5,14 +5,16 @@
   </ion-navbar>
 
 </ion-header>
-
-<h3 *ngIf="cliente">{{cliente.nome}}</h3>
-<p>Pontos: </p>
-<ion-label>Adicionar</ion-label>
-<ion-checkbox [(ngModel)]="add" (ionChange)="clickAdd()"></ion-checkbox>
-<ion-label>Remover</ion-label>
-<ion-checkbox [(ngModel)]="rem" (ionChange)="clickRem()"></ion-checkbox>
-
 <ion-content padding>
-
+  <h3 *ngIf="fidelidade">{{fidelidade.nome}}</h3>
+  <p  *ngIf="fidelidade">Pontos: {{fidelidade.pontos}}</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2>Ação: </ion-col>
+      <ion-col col-3>Adicionar</ion-col>
+      <ion-col col-2><ion-checkbox [(ngModel)]="add" (ionChange)="updateAdd()"></ion-checkbox></ion-col>
+      <ion-col col-3>Remover</ion-col>
+      <ion-col col-2><ion-checkbox [(ngModel)]="rem" (ionChange)="updateRem()"></ion-checkbox></ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

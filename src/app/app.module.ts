@@ -20,6 +20,8 @@ import { ApiProvider } from '../providers/api/api';
 import { HttpClientModule } from '@angular/common/http';
 import { GerenciarPontosPage } from '../pages/gerenciar-pontos/gerenciar-pontos';
 import { GerenciarPontosPageModule } from '../pages/gerenciar-pontos/gerenciar-pontos.module';
+import { EditarPontosPage } from '../pages/editar-pontos/editar-pontos';
+import { EditarPontosPageModule } from '../pages/editar-pontos/editar-pontos.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { GerenciarPontosPageModule } from '../pages/gerenciar-pontos/gerenciar-p
     CriarContaPageModule,
     ExtratoPageModule,
     HttpClientModule,
-    GerenciarPontosPageModule
+    GerenciarPontosPageModule,
+    EditarPontosPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -46,7 +49,8 @@ import { GerenciarPontosPageModule } from '../pages/gerenciar-pontos/gerenciar-p
     LoginPage,
     CriarContaPage,
     ExtratoPage,
-    GerenciarPontosPage
+    GerenciarPontosPage,
+    EditarPontosPage
   ],
   providers: [
     StatusBar,

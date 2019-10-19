@@ -9,10 +9,9 @@
 
 </ion-header>
 
-
 <ion-content padding>
   <h3>Adicionar ou Remover Pontos</h3>
-  <ion-item>
+  <ion-item *ngIf="user.franqueado == 1">
     <ion-label>Franquias</ion-label>
     <!-- <ion-select (ionChange)="teste($event);"> Ajustes na tela de Gerenciar Pontos -->
       <ion-select (ionChange)="setLojasValues(franquia)" [(ngModel)]="franquia">
@@ -30,18 +29,18 @@
     <div id="table-scroll">
       <ion-grid>
         <ion-row nowrap class="cabecalho" text-center>
+          <ion-col class="colunas_cabecalho">Ação</ion-col>
           <ion-col class="colunas_cabecalho">Nome</ion-col>
           <ion-col class="colunas_cabecalho">Email</ion-col>
           <ion-col class="colunas_cabecalho">CPF</ion-col>
           <ion-col class="colunas_cabecalho">Pontos</ion-col>
-          <ion-col class="colunas_cabecalho">Ação</ion-col>
         </ion-row>
         <ion-row nowrap *ngFor="let fidel of fidelidades" class="forecast_container" text-center>
+          <ion-col class="colunas" text-center><button ion-button clear (click)="editarPontos(fidel)">+/-</button></ion-col>
           <ion-col class="colunas">{{fidel.nome}}</ion-col>
           <ion-col class="colunas" text-center>{{fidel.email}}</ion-col>
           <ion-col class="colunas" text-center>{{fidel.cpf}}</ion-col>
           <ion-col class="colunas" text-center>{{fidel.pontos}}</ion-col>
-          <ion-col class="colunas" text-center><a href="">Add/Remover</a></ion-col>
         </ion-row>
       </ion-grid>
     </div>

@@ -40,6 +40,15 @@ export class ApiProvider {
     })
   }
 
+  getFranquias():Array<any>{
+    return [
+      {
+        id: 1,
+        franquia: "SushiJapa"
+      }
+    ]
+  }
+
   getLojasGerPontos(): Array<{Franquia: number, id: number; loja: string}> {
     return [
       {
