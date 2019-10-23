@@ -29,7 +29,7 @@ export class GerenciarPontosPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
     this.user = JSON.parse(localStorage.getItem('userFidel'));
     //this.lojas = this.getLojas();
-    this.getLojas2();
+    this.getLojas();
     //this.franquias = this.getFranquia2();
     this.getFranquia();
     
@@ -60,11 +60,11 @@ export class GerenciarPontosPage {
     //return null;
   }
 
-  getLojas(): Array<{Franquia: number, id: number, loja: string}> {
+  getLojas2(): Array<{Franquia: number, id: number, loja: string}> {
     return this.api.getLojasGerPontos();
   }
 
-  getLojas2(){
+  getLojas(){
     this.api.getLojasGerPontos2(this.user).then((res:any) =>{
       if(res){
         this.lojas = res;
@@ -81,11 +81,11 @@ export class GerenciarPontosPage {
       this.selectedLojas = this.lojas.filter(item => item.Franquia == Franquia.id);
   }
 
-  setFidelidadeList(Loja){
+  setFidelidadeList2(Loja){
     this.fidelidades = this.api.getFidelidadeCliente(Loja.id);
   }
 
-  setFidelidadeList2(loja){
+  setFidelidadeList(loja){
     this.api.getFidelidadeCliente2(this.user, loja.id).then((res:any) =>{
       if(res){
         this.fidelidades = res;
